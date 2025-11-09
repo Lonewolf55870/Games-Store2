@@ -1,0 +1,813 @@
+file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit%20user%20files/Sample%20project%20-%20Acme/My%20first%20we%20su/web.htmlfile:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit%20user%20files/Sample%20project%20-%20Acme/My%20first%20we%20su/web.html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Store | Your Ultimate Gaming Destination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --danger: #e84393;
+            --warning: #fdcb6e;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .search-cart {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 250px;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--danger);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+        }
+
+        /* Games Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .game-card {
+            background-color: #2d3047;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-img {
+            height: 200px;
+            width: 100%;
+            background-color: #3d3f5c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 3rem;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .game-description {
+            color: #b2bec3;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .game-price {
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .game-rating {
+            color: var(--warning);
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: #252742;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .featured-game {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .featured-img {
+            flex: 1;
+            height: 350px;
+            background-color: #3d3f5c;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 5rem;
+        }
+
+        .featured-content {
+            flex: 1;
+        }
+
+        .featured-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .featured-content p {
+            margin-bottom: 20px;
+            color: #b2bec3;
+        }
+
+        .discount {
+            display: inline-block;
+            background-color: var(--danger);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: var(--dark);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #1e1e2e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f0f1a;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #b2bec3;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b2bec3;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .featured-game {
+                flex-direction: column;
+            }
+            
+            .featured-img, .featured-content {
+                flex: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .search-box input {
+                width: 150px;
+            }
+            
+            .filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .newsletter-form input, .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h1>Games Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                <div class="search-cart">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search games...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Discover Amazing Games</h2>
+            <p>Explore our vast collection of games for all platforms. From action-packed adventures to mind-bending puzzles, we have something for every gamer.</p>
+            <a href="#" class="cta-button">Browse Games</a>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Games</h2>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Action</button>
+                <button class="filter-btn">Adventure</button>
+                <button class="filter-btn">RPG</button>
+                <button class="filter-btn">Sports</button>
+                <button class="filter-btn">Strategy</button>
+            </div>
+            <div class="games-grid">
+                <!-- Game 1 -->
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Dragon's Legacy</h3>
+                        <p class="game-description">Embark on an epic journey through mystical lands to uncover the secrets of the ancient dragons.</p>
+                        <div class="game-meta">
+                            <span class="game-price">$49.99</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Game 2 -->
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Velocity X</h3>
+                        <p class="game-description">High-speed racing action with stunning graphics and realistic physics.</p>
+                        <div class="game-meta">
+                            <span class="game-price">$39.99</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Game 3 -->
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Kingdom Conquest</h3>
+                        <p class="game-description">Build your empire, train armies, and conquer kingdoms in this strategic masterpiece.</p>
+                        <div class="game-meta">
+                            <span class="game-price">$29.99</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.7
+                            </span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Game 4 -->
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Street Slam</h3>
+                        <p class="game-description">Experience the thrill of street basketball with realistic gameplay and amazing graphics.</p>
+                        <div class="game-meta">
+                            <span class="game-price">$34.99</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.3
+                            </span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured">
+        <div class="container">
+            <div class="featured-game">
+                <div class="featured-img">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="featured-content">
+                    <span class="discount">50% OFF</span>
+                    <h3>Cyber Revolution</h3>
+                    <p>Immerse yourself in a futuristic world where humans and machines coexist. With stunning visuals and an engaging storyline, this game will keep you hooked for hours.</p>
+                    <p>Explore vast open worlds, customize your character, and engage in epic battles against rogue AI systems.</p>
+                    <div class="game-meta">
+                        <span class="game-price"><s>$59.99</s> $29.99</span>
+                        <span class="game-rating">
+                            <i class="fas fa-star"></i> 4.9
+                        </span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter and be the first to know about new releases, special offers, and gaming news.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Games Store</h3>
+                    <p>Your ultimate destination for the best gaming experiences. We offer a wide selection of games for all platforms.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Gaming Street, City</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@gamesstore.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Games Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // In a real implementation, this would filter the games
+                // For this demo, we'll just show an alert
+                if(button.textContent !== 'All') {
+                    alert(`Filtering by: ${button.textContent}`);
+                }
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const gameTitle = button.parentElement.querySelector('.game-title').textContent;
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                count++;
+                cartCount.textContent = count;
+                
+                // Show confirmation
+                button.textContent = 'Added!';
+                button.style.backgroundColor = 'var(--success)';
+                
+                setTimeout(() => {
+                    button.textContent = 'Add to Cart';
+                    button.style.backgroundColor = 'var(--primary)';
+                }, 2000);
+                
+                alert(`${gameTitle} added to cart!`);
+            });
+        });
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Thank you for subscribing with: ${email}`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
